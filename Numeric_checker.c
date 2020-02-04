@@ -1,17 +1,19 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <dirent.h>
 
-bool check(char *string){
-    char *end;
+int check(char string[]){
+
+    int length = strlen(string);
+    //int test_i;
+
+    //printf("%d\n", length);
+
+    for(int walk = 0; walk <= length; walk++){
+        //test_i = isdigit(string[walk]);
+        //printf("walk: %d char: %c test_i: %d\n", walk, string[walk], test_i);
+        if(isdigit(string[walk]) == 0 && string[walk] != '\0'){
+            
+            return 0;
+        }
+    }
     
-    strtol(*string, &end, 10);
-
-    if(*end != '\0' || end == numbers) 
-        return 0;
-    else 
-        return 1;
-
-
-    return 0;
+    return 1;
 }
